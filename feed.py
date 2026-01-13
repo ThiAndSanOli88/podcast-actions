@@ -27,7 +27,6 @@ xml_tree.SubElement(channel_element, 'link').text = link_prefix
 for item in yaml_data['item']:
     item_element = xml_tree.SubElement(channel_element, 'item')
     xml_tree.SubElement(item_element, 'title').text = item['title']
-    xml_tree.SubElement(channel_element, 'author').text = yaml_data['author']
     xml_tree.SubElement(channel_element, 'description').text = yaml_data['description']
     xml_tree.SubElement(channel_element, 'published').text = yaml_data['published']
     xml_tree.SubElement(channel_element, 'file').text = yaml_data['file']
