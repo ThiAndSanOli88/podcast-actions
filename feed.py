@@ -27,11 +27,11 @@ xml_tree.SubElement(channel_element, 'link').text = link_prefix
 for item in yaml_data['item']:
     item_element = xml_tree.SubElement(channel_element, 'item')
     xml_tree.SubElement(item_element, 'title').text = item['title']
-    xml_tree.SubElement(channel_element, 'description').text = yaml_data['description']
-    xml_tree.SubElement(channel_element, 'published').text = yaml_data['published']
-    xml_tree.SubElement(channel_element, 'file').text = yaml_data['file']
-    xml_tree.SubElement(channel_element, 'duration').text = yaml_data['duration']
-    xml_tree.SubElement(channel_element, 'length').text = yaml_data['length']
+    xml_tree.SubElement(item_element, 'description').text = item['description']
+    xml_tree.SubElement(item_element, 'published').text = item['published']
+    xml_tree.SubElement(item_element, 'file').text = item['file']
+    xml_tree.SubElement(item_element, 'duration').text = item['duration']
+    xml_tree.SubElement(item_element, 'length').text = item['length']
 
     enclosure = xml_tree.SubElement(item_element, 'enclosure', 
                                     {'url':link_prefix + item['file'], 
